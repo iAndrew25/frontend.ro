@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useState } from 'react';
+import React, { PropsWithChildren, useState, useEffect } from 'react';
 import Header from '~/components/Header';
 import Footer from '~/components/Footer';
 import { LessonMenu } from '~/components/lessons';
@@ -9,6 +9,7 @@ import { withClientMonitoring } from '~/services/Hooks';
 import { GITHUB_URL } from '~/services/Constants';
 import LessonHeading from './LessonHeading/LessonHeading';
 import LessonExercises from './LessonExercises/LessonExercises';
+import LessonRating from './LessonRating/LessonRating';
 
 interface Props {
   title: string;
@@ -23,8 +24,17 @@ export default function Lesson({
   withExercises = true,
 } : PropsWithChildren<Props>) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isRatingVisible, setIsRatingVisible] = useState(false);
 
   withClientMonitoring();
+
+  const handleOnRating = () => {
+    setTimeout(setIsRatingVisible, 2000, false);
+  };
+
+  useEffect(() => {
+    setTimeout(setIsRatingVisible, 2000, true);
+  }, []);
 
   return (
     <div className={styles.lesson}>
@@ -52,6 +62,10 @@ export default function Lesson({
           </p>
         </div>
         {withExercises && <LessonExercises /> }
+        <LessonRating
+          isRatingVisible={isRatingVisible}
+          onRatingSent={handleOnRating}
+        />
         <Footer />
       </main>
     </div>

@@ -28,6 +28,10 @@
   color: color(green);
 }
 
+.text-yellow {
+  color: color(yellow);
+}
+
 .bg-white {
   background: color(white);
 }
@@ -137,6 +141,10 @@
   margin: 0;
 }
 
+.mb-2 {
+  margin-bottom: 0.5em;
+}
+
 .mb-4 {
   margin-bottom: 1em;
 }
@@ -177,17 +185,25 @@
   position: absolute;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .relative {
   position: relative;
+}
+
+.absolute-fill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 /** Others */
 .outline-none {
   outline: 0;
-}
-
-.invisible {
-  visibility: hidden;
 }
 
 .overflow-hidden {
@@ -198,4 +214,15 @@
 
 .rotate {
   animation: 0.5s rotateAnimation linear infinite ;
+}
+
+/** Transitions */
+.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.invisible {
+  visibility: hidden;
+  opacity: 0;
 }
