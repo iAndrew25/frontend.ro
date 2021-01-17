@@ -9,7 +9,7 @@ import { withClientMonitoring } from '~/services/Hooks';
 import { GITHUB_URL } from '~/services/Constants';
 import LessonHeading from './LessonHeading/LessonHeading';
 import LessonExercises from './LessonExercises/LessonExercises';
-import LessonRating from './LessonRating/LessonRating';
+import LessonFeedback from './LessonFeedback/LessonFeedback';
 
 interface Props {
   title: string;
@@ -62,7 +62,7 @@ export default function Lesson({
           </p>
         </div>
         {withExercises && <LessonExercises /> }
-        <LessonRating
+        <LessonFeedback
           isRatingVisible={isRatingVisible}
           onRatingSent={handleOnRating}
         />

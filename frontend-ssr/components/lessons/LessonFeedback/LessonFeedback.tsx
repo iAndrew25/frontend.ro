@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import styles from './LessonRating.module.scss';
+import styles from './LessonFeedback.module.scss';
 
 import Rating from '~/components/Rating';
 
@@ -8,7 +8,7 @@ interface Props {
   isRatingVisible: boolean
 }
 
-export default function LessonRating({ isRatingVisible, onRatingSent }: Props) {
+export default function LessonFeedback({ isRatingVisible, onRatingSent }: Props) {
   const [rating, setRating] = useState(0);
   const overlayClassNames = [
     styles['thanks-overlay'],
@@ -18,7 +18,7 @@ export default function LessonRating({ isRatingVisible, onRatingSent }: Props) {
   ].join(' ');
 
   const ratingClassNames = [
-    styles['lesson-rating'],    
+    styles['lesson-feedback'],    
     'rounded-md',
     'fixed',
     'overflow-hidden',
